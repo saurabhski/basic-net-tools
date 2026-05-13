@@ -98,7 +98,7 @@ def execute(cmd):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Network Scanning Tool'
+        description='Network Scanning Tool',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=textwrap.dedent('''Example:
                                 netcat.py -t 192.168.1.108 -p 5555 -l -c # command shell
@@ -114,7 +114,7 @@ parser.add_argument('-l', '--listen', action='store_true', help='listen')
 parser.add_argument('-p', '--port', type=int, default=5555, help='specified port')
 parser.add_argument('-t', '--target', default='192.168.1.203', help='specified IP')
 parser.add_argument('-u', '--upload', help='upload file')
-args = parser.parse.args()
+args = parser.parse_args()
 if args.listen:
     buffer = ''
 else:
